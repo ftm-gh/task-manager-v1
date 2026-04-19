@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      What is DOCTYPE?
+      It tells the browser: "This is an HTML5 document."
+      Without it, the browser might render the page in "quirks mode"
+      (an old, buggy compatibility mode from the early 2000s).
+      Always include it — it's one line and prevents weird issues.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!--
+      The favicon — the tiny icon that appears in the browser tab.
+      You can replace this with your own icon file.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Makes the page responsive (looks good on phones):
+      - width=device-width: page width = screen width
+      - initial-scale=1.0: no zoom by default
+      
+      Without this, mobile browsers would show the desktop version
+      zoomed out, making everything tiny and unreadable.
+    -->
+
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--
+      🔑 This is THE MOST IMPORTANT line in this file.
+
+      This empty div is where the ENTIRE Vue application gets inserted.
+      Vue's mount() function (in main.js) targets this element by its id.
+      
+      When the page loads:
+      1. Browser renders this empty div
+      2. JavaScript (main.js) loads
+      3. Vue takes over and fills the div with the app's content
+      
+      Everything the user sees — the navbar, forms, task list —
+      is dynamically created by JavaScript inside this div.
+      
+      If you "View Source" in the browser, you'll only see this empty div.
+      The actual content is only visible in "Inspect Element" (DevTools).
+    -->
+
+    <script type="module" src="/src/main.js"></script>
+    <!--
+      Load the main JavaScript file.
+      
+      type="module" enables ES Modules (import/export syntax).
+      Without it, "import" and "export" statements would cause errors.
+      
+      Vite (our build tool) processes this file and all its imports,
+      bundling everything together efficiently.
+    -->
+  </body>
+</html>
